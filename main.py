@@ -14,6 +14,7 @@ from datetime import datetime
 from logger import setup_logger, cleanup_old_logs
 from signals import SignalRecorder
 from reporter import DailyReporter
+from telegram_bot import TelegramBot
 
 def load_config(config_file='config.yaml'):
     """加载配置文件"""
@@ -131,6 +132,9 @@ def main():
     recorder = SignalRecorder(data_dir='data')
     recorder.cleanup_old_signals(days=30)
     
+    # 初始化 Telegram Bot
+    telegram_bot = TelegramBot()
+    
     # 输出头部
     print("=" * 80)
     print("CryptoEmperor AI - 最小可运行版本 v2")
@@ -184,6 +188,9 @@ def main():
                 signal_type=signal_type,
                 metadata=ticker_24h
             )
+            
+            # 推送到 Telegram（仅买入/卖出信号）
+            telegram_bot.send_signal(symbol, signal_type, current_price, rsi, ticker_24h)
             
             signals.append({
                 'symbol': symbol,

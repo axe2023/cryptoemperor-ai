@@ -12,6 +12,9 @@
 - ✅ **回测引擎**：验证策略历史表现
 - ✅ **配置化**：YAML 配置文件，易于调整参数
 - ✅ **日志系统**：按日期分文件，自动清理旧日志
+- ✅ **Telegram 推送**：实时信号通知、日报推送
+- ✅ **定时调度**：自动化运行，无需人工干预
+- ✅ **Docker 部署**：一键容器化部署
 
 ## 📦 安装
 
@@ -80,7 +83,21 @@ logging:
 python3 main.py
 ```
 
-### 方式 3：回测历史策略
+### 方式 3：定时调度器
+```bash
+python3 scheduler.py
+```
+
+按配置的时间自动运行扫描和日报生成（默认：每天 09:00/12:00/15:00/18:00/21:00 扫描，22:00 生成日报）。
+
+### 方式 4：Docker 部署（推荐生产环境）
+```bash
+docker-compose up -d
+```
+
+详见 [DOCKER.md](DOCKER.md)。
+
+### 方式 5：回测历史策略
 ```bash
 python3 -c "
 from backtest import Backtester
@@ -209,8 +226,14 @@ print(f'总收益: {result["total_return"]:.2f}%')
 
 ## 📝 TODO
 
+- [x] 实时信号生成
+- [x] 信号记录与日报
+- [x] 风控模块
+- [x] 回测引擎
+- [x] Telegram 推送
+- [x] 定时调度器
+- [x] Docker 部署
 - [ ] WebSocket 实时数据流
-- [ ] Telegram 推送集成
 - [ ] 多交易所支持（OKX、Bybit）
 - [ ] 机器学习优化信号权重
 - [ ] Web 仪表盘
