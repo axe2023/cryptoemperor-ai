@@ -1,0 +1,31 @@
+# CryptoEmperor AI 配置文件
+
+# 交易对列表
+symbols:
+  - BTCUSDT
+  - ETHUSDT
+  - BNBUSDT
+  - SOLUSDT
+
+# RSI 参数
+rsi:
+  period: 14          # RSI 计算周期
+  oversold: 30        # 超卖阈值（低于此值触发买入信号）
+  overbought: 70      # 超买阈值（高于此值触发卖出信号）
+
+# K线参数
+kline:
+  interval: 15m       # K线周期 (1m, 5m, 15m, 1h, 4h, 1d)
+  limit: 100          # 获取K线数量
+
+# 日志配置
+logging:
+  level: INFO         # 日志级别 (DEBUG, INFO, WARNING, ERROR)
+  dir: logs           # 日志目录
+  max_files: 30       # 保留最近N天的日志
+
+# 输出配置
+output:
+  show_24h_change: true    # 显示24h涨跌幅
+  show_volume: true        # 显示成交量
+  show_timestamp: true     # 显示时间戳
