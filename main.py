@@ -12,6 +12,8 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from logger import setup_logger, cleanup_old_logs
+from signals import SignalRecorder
+from reporter import DailyReporter
 
 def load_config(config_file='config.yaml'):
     """加载配置文件"""
@@ -125,6 +127,10 @@ def main():
         max_files=config['logging']['max_files']
     )
     
+    # 初始化信号记录器
+    recorder = SignalRecorder(data_dir='data')
+    recorder.cleanup_old_signals(days=30)
+    
     # 输出头部
     print("=" * 80)
     print("CryptoEmperor AI - 最小可运行版本 v2")
@@ -170,6 +176,15 @@ def main():
             print(signal_text)
             logger.info(f"{symbol} | {signal_type} | 价格: ${current_price:,.2f} | RSI: {rsi:.2f}")
             
+            # 记录信号
+            recorder.add_signal(
+                symbol=symbol,
+                price=current_price,
+                rsi=rsi,
+                signal_type=signal_type,
+                metadata=ticker_24h
+            )
+            
             signals.append({
                 'symbol': symbol,
                 'price': current_price,
@@ -184,6 +199,12 @@ def main():
     
     print("=" * 80)
     logger.info(f"本次扫描完成，共处理 {len(signals)} 个交易对")
+    
+    # 生成日报
+    reporter = DailyReporter(recorder)
+    report_file = reporter.save_report(output_dir='reports')
+    logger.info(f"日报已生成: {report_file}")
+    
     logger.info("=" * 60)
 
 if __name__ == '__main__':

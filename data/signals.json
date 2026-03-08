@@ -1,0 +1,98 @@
+[
+  {
+    "timestamp": "2026-03-08T15:02:37.640251",
+    "symbol": "BTCUSDT",
+    "price": 67174.55,
+    "rsi": 56.41623225904606,
+    "signal": "⚪ 观望",
+    "metadata": {
+      "price_change_percent": -0.707,
+      "volume": 14064.83408,
+      "quote_volume": 948506718.502479
+    }
+  },
+  {
+    "timestamp": "2026-03-08T15:02:37.923989",
+    "symbol": "ETHUSDT",
+    "price": 1948.29,
+    "rsi": 65.89611096002143,
+    "signal": "⚪ 观望",
+    "metadata": {
+      "price_change_percent": -1.192,
+      "volume": 230071.7584,
+      "quote_volume": 451836071.318874
+    }
+  },
+  {
+    "timestamp": "2026-03-08T15:02:38.226412",
+    "symbol": "BNBUSDT",
+    "price": 618.99,
+    "rsi": 69.94219653179229,
+    "signal": "⚪ 观望",
+    "metadata": {
+      "price_change_percent": -1.17,
+      "volume": 65367.011,
+      "quote_volume": 40681423.13987
+    }
+  },
+  {
+    "timestamp": "2026-03-08T15:02:38.508382",
+    "symbol": "SOLUSDT",
+    "price": 82.43,
+    "rsi": 65.11627906976805,
+    "signal": "⚪ 观望",
+    "metadata": {
+      "price_change_percent": -1.904,
+      "volume": 1494253.772,
+      "quote_volume": 124617264.23327
+    }
+  },
+  {
+    "timestamp": "2026-03-08T15:02:59.122025",
+    "symbol": "BTCUSDT",
+    "price": 67185.15,
+    "rsi": 56.41623225904606,
+    "signal": "⚪ 观望",
+    "metadata": {
+      "price_change_percent": -0.667,
+      "volume": 14064.65486,
+      "quote_volume": 948494232.8125737
+    }
+  },
+  {
+    "timestamp": "2026-03-08T15:02:59.398700",
+    "symbol": "ETHUSDT",
+    "price": 1948.5,
+    "rsi": 65.89611096002143,
+    "signal": "⚪ 观望",
+    "metadata": {
+      "price_change_percent": -1.181,
+      "volume": 230070.596,
+      "quote_volume": 451833606.972687
+    }
+  },
+  {
+    "timestamp": "2026-03-08T15:02:59.672440",
+    "symbol": "BNBUSDT",
+    "price": 619.0,
+    "rsi": 69.94219653179229,
+    "signal": "⚪ 观望",
+    "metadata": {
+      "price_change_percent": -1.169,
+      "volume": 65370.504,
+      "quote_volume": 40683580.08194
+    }
+  },
+  {
+    "timestamp": "2026-03-08T15:02:59.942734",
+    "symbol": "SOLUSDT",
+    "price": 82.43,
+    "rsi": 65.11627906976805,
+    "signal": "⚪ 观望",
+    "metadata": {
+      "price_change_percent": -1.857,
+      "volume": 1493858.804,
+      "quote_volume": 124583594.06991
+    }
+  }
+]
