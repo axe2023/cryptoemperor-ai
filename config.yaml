@@ -26,6 +26,13 @@ logging:
 
 # 输出配置
 output:
-  show_24h_change: true    # 显示24h涨跌幅
-  show_volume: true        # 显示成交量
-  show_timestamp: true     # 显示时间戳
+  show_24h_change: true        # 显示24h涨跌幅
+  show_volume: true            # 显示成交量
+  show_timestamp: true         # 显示时间戳
+
+# 情绪分析配置（6551 API）
+sentiment_analysis:
+  enable_news: false           # 启用新闻情绪分析（需要 OPENNEWS_TOKEN）
+  enable_twitter: false        # 启用 Twitter 情绪分析（需要 TWITTER_TOKEN）
+  news_limit: 10               # 分析新闻数量
+  twitter_limit: 50            # 分析推文数量
